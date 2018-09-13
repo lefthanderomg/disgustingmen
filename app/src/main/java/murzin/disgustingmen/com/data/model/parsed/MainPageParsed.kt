@@ -6,4 +6,6 @@ class MainPageParsed {
 
     @Selector(value = "div.post_item.new_post_item")
     var getMainPageArticle: List<DisgustingmenArticleParsed> = emptyList()
+
+
 }

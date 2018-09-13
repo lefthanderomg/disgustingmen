@@ -24,13 +24,13 @@ class MainPagePresenter @Inject constructor(
         getContent()
     }
 
-    fun getContent() {
+    private fun getContent() {
         getMainContentUseCase
                 .getMainContent()
                 .subscribeOn(schedulers.io())
                 .observeOn(schedulers.ui())
                 .subscribe({ article ->
-                    
+                    println()
                 }, { error -> errorHandler.proceed(error)})
                 .also { addToDisposable(it) }
     }
