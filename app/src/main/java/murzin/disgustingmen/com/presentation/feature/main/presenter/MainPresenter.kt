@@ -11,4 +11,10 @@ import javax.inject.Inject
 @InjectViewState
 class MainPresenter @Inject constructor(private val router: Router) : BasePresenter<MainView>() {
 
+
+
+    fun openMainScreen() {
+
+    }
+
 }
