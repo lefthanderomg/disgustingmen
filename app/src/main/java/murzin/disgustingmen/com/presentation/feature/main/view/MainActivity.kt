@@ -1,6 +1,5 @@
 package murzin.disgustingmen.com.presentation.feature.main.view
 
-import android.os.Bundle
 import android.support.annotation.LayoutRes
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
@@ -26,23 +25,29 @@ class MainActivity : BaseActivity(), MainView {
     @ProvidePresenter
     fun providePresenter(): MainPresenter = presenter
 
+    @Inject
+    lateinit var navigator: Navigator
+
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navigationView: NavigationView
     private lateinit var toolbar: Toolbar
 
 
-    override var navigator: Navigator = Navigator { }
+    override fun onResume() {
+        super.onResume()
+        navigatorHolder.setNavigator(navigator)
+    }
 
     private fun initDrawer() {
         drawerLayout = findViewById(R.id.drawer_layout)
         navigationView = findViewById(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener { menuItem ->
-             when(menuItem.itemId) {
-                 R.id.item_main -> presenter.openMainScreen()
-             }
+            when (menuItem.itemId) {
+                R.id.item_main -> presenter.openMainScreen()
+            }
             drawerLayout.closeDrawers()
 
-             true
+            true
         }
     }
 
@@ -66,7 +71,6 @@ class MainActivity : BaseActivity(), MainView {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
 
 
     @LayoutRes

@@ -12,7 +12,9 @@ import dagger.android.AndroidInjector
 import dagger.Component;
 
 @PerApplication
-@Component(modules = [AppModule::class, RxModule::class,
+@Component(modules = [
+    AppModule::class,
+    RxModule::class,
     NetworkModule::class,
     AppBuilderModule::class,
     AndroidSupportInjectionModule::class])

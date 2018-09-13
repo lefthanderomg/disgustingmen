@@ -2,12 +2,15 @@ package murzin.disgustingmen.com.di.module
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import murzin.disgustingmen.com.presentation.feature.main.di.MainViewModule
+import murzin.disgustingmen.com.di.PerActivity
+import murzin.disgustingmen.com.presentation.feature.main.di.MainActivityModule
+import murzin.disgustingmen.com.presentation.feature.main.di.MainBuilderModule
 import murzin.disgustingmen.com.presentation.feature.main.view.MainActivity
 
 @Module
 interface AppBuilderModule {
 
-    @ContributesAndroidInjector(modules = [MainViewModule::class])
+    @PerActivity
+    @ContributesAndroidInjector(modules = [(MainActivityModule::class), (MainBuilderModule::class)])
     fun provideMainActivityFactory(): MainActivity
 }

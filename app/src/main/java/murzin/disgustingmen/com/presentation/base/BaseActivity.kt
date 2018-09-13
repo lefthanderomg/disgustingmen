@@ -23,7 +23,7 @@ abstract class BaseActivity : MvpAppCompatActivity(), HasSupportFragmentInjector
     @Inject
     lateinit var navigatorHolder: NavigatorHolder
 
-    abstract var navigator: Navigator
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
@@ -32,10 +32,7 @@ abstract class BaseActivity : MvpAppCompatActivity(), HasSupportFragmentInjector
         viewCreated()
     }
 
-    override fun onResume() {
-        super.onResume()
-        navigatorHolder.setNavigator(navigator)
-    }
+
 
     override fun onPause() {
         super.onPause()
