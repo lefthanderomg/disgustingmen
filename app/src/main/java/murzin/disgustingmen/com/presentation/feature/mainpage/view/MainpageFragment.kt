@@ -1,6 +1,7 @@
 package murzin.disgustingmen.com.presentation.feature.mainpage.view
 
 import android.os.Bundle
+import android.widget.Toast
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import murzin.disgustingmen.com.R
@@ -10,6 +11,10 @@ import murzin.disgustingmen.com.presentation.feature.mainpage.presenter.MainPage
 import javax.inject.Inject
 
 class MainpageFragment : BaseFragment(), MainpageView {
+
+    override fun show(error: String) {
+
+    }
 
     companion object {
         fun getNewInstance() : MainpageFragment = MainpageFragment()

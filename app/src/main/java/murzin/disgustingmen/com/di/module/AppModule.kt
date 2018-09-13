@@ -1,18 +1,17 @@
 package murzin.disgustingmen.com.di.module
 
 import android.content.Context
-
+import dagger.Module
+import dagger.Provides
 import murzin.disgustingmen.com.App
 import murzin.disgustingmen.com.di.PerApplication
-
+import murzin.disgustingmen.com.domain.provider.SchedulersProvider
+import murzin.disgustingmen.com.presentation.error.DefaultErrorHandler
+import murzin.disgustingmen.com.utils.provider.AppSchedulersProvider
+import org.xml.sax.ErrorHandler
 import ru.terrakok.cicerone.Cicerone
 import ru.terrakok.cicerone.NavigatorHolder
 import ru.terrakok.cicerone.Router
-
-import dagger.Module
-import dagger.Provides
-import murzin.disgustingmen.com.domain.provider.SchedulersProvider
-import murzin.disgustingmen.com.utils.provider.AppSchedulersProvider
 
 @Module
 class AppModule {
@@ -36,5 +35,7 @@ class AppModule {
     @PerApplication
     @Provides
     fun provideSchedulers(): SchedulersProvider = AppSchedulersProvider()
+
+
 
 }
