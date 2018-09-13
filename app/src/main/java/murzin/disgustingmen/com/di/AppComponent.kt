@@ -1,15 +1,10 @@
 package murzin.disgustingmen.com.di
 
-import murzin.disgustingmen.com.App
-
-import murzin.disgustingmen.com.di.module.AppModule
-import murzin.disgustingmen.com.di.module.NetworkModule
-import murzin.disgustingmen.com.di.module.RxModule
-import murzin.disgustingmen.com.di.module.AppBuilderModule
-
-import dagger.android.support.AndroidSupportInjectionModule
+import dagger.Component
 import dagger.android.AndroidInjector
-import dagger.Component;
+import dagger.android.support.AndroidSupportInjectionModule
+import murzin.disgustingmen.com.App
+import murzin.disgustingmen.com.di.module.*
 
 @PerApplication
 @Component(modules = [
@@ -17,6 +12,7 @@ import dagger.Component;
     RxModule::class,
     NetworkModule::class,
     AppBuilderModule::class,
+    RepoModule::class,
     AndroidSupportInjectionModule::class])
 interface AppComponent : AndroidInjector<App> {
 

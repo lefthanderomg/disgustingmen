@@ -11,6 +11,8 @@ import ru.terrakok.cicerone.Router
 
 import dagger.Module
 import dagger.Provides
+import murzin.disgustingmen.com.domain.provider.SchedulersProvider
+import murzin.disgustingmen.com.utils.provider.AppSchedulersProvider
 
 @Module
 class AppModule {
@@ -30,5 +32,9 @@ class AppModule {
     @PerApplication
     @Provides
     fun provideRouter(cicerone: Cicerone<Router>): Router = cicerone.router
+
+    @PerApplication
+    @Provides
+    fun provideSchedulers(): SchedulersProvider = AppSchedulersProvider()
 
 }

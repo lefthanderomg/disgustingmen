@@ -22,9 +22,7 @@ class MainpageFragment : BaseFragment(), MainpageView {
     @ProvidePresenter
     fun provideMainpagerPresenter() = presenter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+
 
     override fun layoutRes(): Int = R.layout.fragment_main_page
 

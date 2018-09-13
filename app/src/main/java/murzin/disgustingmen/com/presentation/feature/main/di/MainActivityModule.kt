@@ -8,6 +8,7 @@ import murzin.disgustingmen.com.presentation.feature.main.view.MainActivity
 import ru.terrakok.cicerone.Navigator
 
 @Module
+
 class MainActivityModule {
 
     @PerActivity
