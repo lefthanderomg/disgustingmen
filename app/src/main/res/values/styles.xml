@@ -4,6 +4,12 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="cardViewStyle">@style/CardView</item>
+    </style>
+
+    <style name="SmallTitleText">
+        <item name="android:fontFamily">@font/ubuntu_bold</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
 </resources>

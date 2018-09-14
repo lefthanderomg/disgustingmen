@@ -1,5 +1,6 @@
 package murzin.disgustingmen.com
 
+import com.bumptech.glide.module.AppGlideModule
 import murzin.disgustingmen.com.di.DaggerAppComponent
 
 import dagger.android.AndroidInjector
