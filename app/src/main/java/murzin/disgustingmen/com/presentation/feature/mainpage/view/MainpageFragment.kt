@@ -24,11 +24,14 @@ class MainpageFragment : BaseFragment(), MainpageView {
     @ProvidePresenter
     fun provideMainpagerPresenter() = presenter
 
+    @Inject
+    lateinit var adapter: MainpageAdapter
+
     private lateinit var articleRecuclerView: RecyclerView
-    private lateinit var adapter: MainpageAdapter
+
 
     override fun viewCreated(view: View) {
-        adapter = MainpageAdapter(mutableListOf())
+
         articleRecuclerView = view.findViewById(R.id.recycler_view)
         articleRecuclerView.layoutManager = LinearLayoutManager(context)
         articleRecuclerView.adapter = adapter

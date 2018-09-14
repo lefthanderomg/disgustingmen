@@ -5,13 +5,17 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.item_main_article.view.*
 import murzin.disgustingmen.com.R
 import murzin.disgustingmen.com.presentation.feature.mainpage.model.DisgustingmentArtilceUI
-import murzin.disgustingmen.com.utils.addView
+import murzin.disgustingmen.com.utils.ColorSelector
+import murzin.disgustingmen.com.utils.extensions.addView
 import murzin.disgustingmen.com.utils.extensions.inflate
 import murzin.disgustingmen.com.utils.extensions.loadFromUrl
+import javax.inject.Inject
 
-class MainpageAdapter(private var listArticle: MutableList<DisgustingmentArtilceUI>)
+class MainpageAdapter @Inject constructor(
+        private val colorSelector: ColorSelector)
     : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
+    private var listArticle: MutableList<DisgustingmentArtilceUI> = mutableListOf()
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): RecyclerView.ViewHolder = ItemArticleViewHolder(p0)
 
@@ -31,7 +35,9 @@ class MainpageAdapter(private var listArticle: MutableList<DisgustingmentArtilce
                 tv_title.text = itemArticle.title
                 img_poster.loadFromUrl(itemArticle.imageUrl)
                 chip_group.removeAllViews()
-                itemArticle.categoryTag.forEach { chip_group.addView(it) }
+                itemArticle.categoryTag.forEach {
+                    chip_group.addView(it)
+                }
             }
         }
 

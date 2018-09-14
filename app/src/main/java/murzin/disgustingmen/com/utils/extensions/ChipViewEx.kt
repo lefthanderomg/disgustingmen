@@ -1,4 +1,4 @@
-package murzin.disgustingmen.com.utils
+package murzin.disgustingmen.com.utils.extensions
 
 import android.support.design.chip.Chip
 import android.support.design.chip.ChipGroup
