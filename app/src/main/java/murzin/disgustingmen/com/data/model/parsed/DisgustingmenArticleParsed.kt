@@ -14,7 +14,7 @@ class DisgustingmenArticleParsed {
     var title: String = ""
 
     @Selector(value = "div.tags > a", defValue = "")
-    var categoryTag: String = ""
+    var categoryTag: List<String> = emptyList()
 
     @Selector(value = "div.info > span.author.vcard > a", defValue = "")
     var author: String = ""

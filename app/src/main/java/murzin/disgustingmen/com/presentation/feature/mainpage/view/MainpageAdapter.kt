@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.item_main_article.view.*
 import murzin.disgustingmen.com.R
 import murzin.disgustingmen.com.presentation.feature.mainpage.model.DisgustingmentArtilceUI
+import murzin.disgustingmen.com.utils.addView
 import murzin.disgustingmen.com.utils.extensions.inflate
 import murzin.disgustingmen.com.utils.extensions.loadFromUrl
 
@@ -29,16 +30,20 @@ class MainpageAdapter(private var listArticle: MutableList<DisgustingmentArtilce
             with(itemView) {
                 tv_title.text = itemArticle.title
                 img_poster.loadFromUrl(itemArticle.imageUrl)
+                chip_group.removeAllViews()
+                itemArticle.categoryTag.forEach { chip_group.addView(it) }
             }
         }
 
     }
 
-    fun setArticle(articleFrom : MutableList<DisgustingmentArtilceUI>) {
+    fun setArticle(articleFrom: MutableList<DisgustingmentArtilceUI>) {
         listArticle.addAll(articleFrom)
         notifyDataSetChanged()
     }
 
 }
+
+
 
 
