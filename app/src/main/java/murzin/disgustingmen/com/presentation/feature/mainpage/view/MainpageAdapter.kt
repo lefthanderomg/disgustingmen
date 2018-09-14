@@ -8,7 +8,7 @@ import murzin.disgustingmen.com.presentation.feature.mainpage.model.Disgustingme
 import murzin.disgustingmen.com.utils.extensions.inflate
 import murzin.disgustingmen.com.utils.extensions.loadFromUrl
 
-class MainpageAdapter(private val listArticle: List<DisgustingmentArtilceUI>)
+class MainpageAdapter(private var listArticle: MutableList<DisgustingmentArtilceUI>)
     : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
@@ -32,6 +32,11 @@ class MainpageAdapter(private val listArticle: List<DisgustingmentArtilceUI>)
             }
         }
 
+    }
+
+    fun setArticle(articleFrom : MutableList<DisgustingmentArtilceUI>) {
+        listArticle.addAll(articleFrom)
+        notifyDataSetChanged()
     }
 
 }

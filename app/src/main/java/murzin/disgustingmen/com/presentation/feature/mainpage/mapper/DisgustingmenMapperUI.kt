@@ -4,7 +4,7 @@ import murzin.disgustingmen.com.domain.entity.DisgustingmenArticle
 import murzin.disgustingmen.com.presentation.feature.mainpage.model.DisgustingmentArtilceUI
 import javax.inject.Inject
 
-class DisgustingmenMapper @Inject constructor() {
+class DisgustingmenMapperUI @Inject constructor() {
 
     fun map(from: List<DisgustingmenArticle>): List<DisgustingmentArtilceUI> =
             from.map { articles ->

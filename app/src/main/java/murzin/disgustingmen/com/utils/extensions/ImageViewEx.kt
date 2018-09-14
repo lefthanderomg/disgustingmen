@@ -5,5 +5,7 @@ import murzin.disgustingmen.com.utils.GlideApp
 
 
 fun ImageView.loadFromUrl(url: String) {
-    GlideApp.with(context).load(url.validateUrl()).load(this)
+    GlideApp.with(context).load(url.validateUrl())
+            .centerCrop()
+            .into(this)
 }
